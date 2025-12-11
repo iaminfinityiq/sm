@@ -1,0 +1,8 @@
+@output ascii
+@sm 64
+
+push 256
+push 65
+log
+log
+log

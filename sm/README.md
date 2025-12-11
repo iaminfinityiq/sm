@@ -66,11 +66,11 @@ There are some kinds of error code you can have while using `@output`, here is a
 4. Error code `31`: Output stream is already enabled, specifically when your line looks like `@output ascii`
 5. Error code `32`: Your code expects mode `ascii`/`int`, but you didn`t put in a keyword ascii or int
 
-# `log` (unlocked through `@output`)
-`log` is an instruction which can be unlocked through setting `@output`. This is because `log` prints out the value of the top of the stack depending on the mode `@output` is enabled. After it prints, the top value of the stack is popped
+# `log` (unlocked through `@output` and `@sm`)
+`log` is an instruction which can be unlocked through setting `@output` **and** `@sm`. This is because `log` prints out the value of the top of the stack depending on the mode `@output` is enabled. After it prints, the top value of the stack is popped
 There are some kinds of error code you can have while using `log`, here is a list o all of them just from the `log` instruction:
 1. Error code `33`: The `@output` settings is not enabled
-2. Error code `34`: The line contains more than 1 token
-3. Error code `35`: Stack is empty
-4. Error code `36`: Top of the stack needs to be smaller than 256 in ASCII mode
-
+2. Error code `34`: The `@sm` settings is not enabled
+2. Error code `35`: The line contains more than 1 token
+3. Error code `36`: Stack is empty
+4. Error code `37`: Top of the stack needs to be smaller than 256 in ASCII mode

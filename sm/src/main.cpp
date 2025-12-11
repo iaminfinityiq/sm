@@ -474,16 +474,21 @@ int main(int argc, char* argv[]) {
                 return 33;
             }
 
+            if (!sm.enabled_sm()) {
+                std::cout << "error at line " << pc+1 << ": setting '@sm' is not enabled\n";
+                return 34;
+            }
+
             if (tokens[pc].size() > 1) {
                 std::cout << "error at line " << pc+1 << ": line overload\n";
-                return 34;
+                return 35;
             }
 
             size_t printed = sm.get_stack_top();
             bool success = sm.pop();
             if (!success) {
                 std::cout << "error at line " << pc+1 << ": stack size needed to be at least 1, got 0\n";
-                return 35;
+                return 36;
             }
 
             if (sm.get_output_mode() == "int") {
@@ -494,7 +499,7 @@ int main(int argc, char* argv[]) {
 
             if (printed >= 256) {
                 std::cout << "error at line " << pc+1 << ": top of the stack needs to be smaller than 256 in order to print the character in ASCII\n";
-                return 36;
+                return 37;
             }
 
             std::cout << (char)printed;

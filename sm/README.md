@@ -3,7 +3,7 @@ SM is a programming language, and is a fun project that I'd like to work with. I
 
 # NOTE
 This language uses a unique error code for each type of error
-1. For Windows: open cmd, run the program and type `echo %ERRORLEVEL%
+1. For Windows: open cmd, run the program and type `echo %ERRORLEVEL%`
 After you retrieved the error code, map it to the following errors it might occur in this file
 
 # Settings
@@ -72,4 +72,5 @@ There are some kinds of error code you can have while using 'log', here is a lis
 1. Error code 33: The '@output' settings is not enabled
 2. Error code 34: The line contains more than 1 token
 3. Error code 35: Stack is empty
+
 4. Error code 36: Top of the stack needs to be smaller than 256 in ASCII mode

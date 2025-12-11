@@ -1,9 +1,9 @@
 # SM (stands for Stack and Memory), an esolang made by Infinity
-SM is a programming language, and is a fun project that I`d like to work with. It is a simple project but yet can run programs with only the memory and stack.
+SM is a programming language, and is a fun project that I'd like to work with. It is a simple project but yet can run programs with only the memory and stack.
 
 # NOTE
 This language uses a unique error code for each type of error
-1. For Windows: open cmd, run the program and type `echo %ERRORLEVEL%
+1. For Windows: open cmd, run the program and type `echo %ERRORLEVEL%`
 After you retrieved the error code, map it to the following errors it might occur in this file
 
 # Settings
@@ -14,6 +14,7 @@ Instructions are used after some certain settings is enabled. For example: instr
 
 # `@sm`
 `@sm` is a setting that enables the stack and memory for the program. After `@sm`, you must have a number (`8`/`16`/`32`/`64`), which represents the bit size you are working with
+
 There are some kinds of error code you can have while using `@sm`, here is a list of all of them just from the `@sm` setting:
 1. Error code `1`: The program expects a number `8`/`16`/`32`/`64`, specifically when your line looks like `@sm`
 2. Error code `2`: The line contains more than 2 tokens (aka chunk of string seperated by a space)
@@ -25,6 +26,7 @@ There are some kinds of error code you can have while using `@sm`, here is a lis
 
 # `push` (unlocked through `@sm`)
 `push` is an instruction which can be unlocked through setting `@sm`. This is because `push` expects an unsigned integer from 0 to 2^bit size - 1, and it pushes the number you put into the stack
+
 There are some kinds of error code you can have while using `push`, here is a list of all of them just from the `push` instruction:
 1. Error code `10`: The `@sm` setting is not enabled
 2. Error code `11`: The program expects an unsigned integer, specifically when your line looks like `push`
@@ -37,6 +39,7 @@ There are some kinds of error code you can have while using `push`, here is a li
 
 # `pop` (unlocked through `@sm`)
 `pop` is an instruction which can be unlocked through setting `@sm`. This is because `pop` pops the top element of the stack
+
 There are some kinds of error code you can have while using `pop`, here is a list of all of them just from the `pop` instruction:
 1. Error code `18`: The `@sm` setting is not enabled
 2. Error code `19`: The line contains more than 1 token
@@ -44,6 +47,7 @@ There are some kinds of error code you can have while using `pop`, here is a lis
 
 # `learn` (unlocked through `@sm`)
 `learn` is an instruction which can be unlocked through setting `@sm`. This is because `learn` saves the top value as the value to be stored, pop it, and save the top value as the memory address to be stored. So basically, this instruction saves a value to a memory address
+
 There are some kinds of error code you can have while using `learn`, here is a list of all of them just from the `learn` instruction:
 1. Error code `21`: The `@sm` settings is not enabled
 2. Error code `22`: The line contains more than 1 token
@@ -52,6 +56,7 @@ There are some kinds of error code you can have while using `learn`, here is a l
 
 # `remember` (unlocked through `@sm`)
 `remember` is an instruction which can be unlocked through setting `@sm`. This is becacuse `remember` saves the top value to be the address that it will retrieve, and pops the top. And then, it pushes the value of the address
+
 There are some kinds of error code you can have while using `remember`, here is a list of all of them just from the `remember` instruction:
 1. Error code `25`: The `@sm` settings is not enabled
 2. Error code `26`: The line contains more than 1 token
@@ -59,6 +64,7 @@ There are some kinds of error code you can have while using `remember`, here is 
 
 # `@output`
 `@output` is a setting that enables the output stream for the program. After `@output`, you must specify either mode: ascii or int. The int mode will let your output stream to output the values as an integer, while the ascii mode will let your output stream to output the values as an ASCII character.
+
 There are some kinds of error code you can have while using `@output`, here is a list of all of them just from the `@output` setting:
 1. Error code `28`: The program expects a mode `ascii` or `int`, specifically when your line looks like `@output`
 2. Error code `29`: The line contains more than 2 tokens
@@ -68,9 +74,11 @@ There are some kinds of error code you can have while using `@output`, here is a
 
 # `log` (unlocked through `@output` and `@sm`)
 `log` is an instruction which can be unlocked through setting `@output` **and** `@sm`. This is because `log` prints out the value of the top of the stack depending on the mode `@output` is enabled. After it prints, the top value of the stack is popped
+
 There are some kinds of error code you can have while using `log`, here is a list o all of them just from the `log` instruction:
 1. Error code `33`: The `@output` settings is not enabled
 2. Error code `34`: The `@sm` settings is not enabled
 2. Error code `35`: The line contains more than 1 token
 3. Error code `36`: Stack is empty
+
 4. Error code `37`: Top of the stack needs to be smaller than 256 in ASCII mode
